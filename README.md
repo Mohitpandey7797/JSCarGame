@@ -10,7 +10,7 @@ Features:-
     Play and check realtime score system
     Move car any direction(Left/Right/Top/Bottom)
     Responsive
-    Userfriendly inteface
+    Userfriendly interface
 
 Technologies Used:-
 
