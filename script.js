@@ -38,6 +38,9 @@ function moveLines() {
         }
         item.y += player.speed;
         item.style.top = item.y + "px";
+        if (player.score >= 1000) {
+            player.speed = 10;
+        }
     })
 }
 
@@ -74,6 +77,7 @@ function start() {
   
     player.start = true;
     player.score=0;
+    player.speed=5;
     window.requestAnimationFrame(gamePlay);
 
     for (x = 0; x < 5; x++) {
@@ -123,13 +127,15 @@ function endGame(){
     startScreen.innerHTML = "Game Over <br> Your final score is " + player.score+" <br>  Press here to restart the Game!"
 }
 
+
+
 function moveEnemy(car) {
     let enemy = document.querySelectorAll('.enemy');
 
     enemy.forEach(function (item) {
 
         if(isCollide(car,item)){
-            console.log("Hit");
+            
             endGame();
         }
         if (item.y >= 750) {
@@ -138,5 +144,9 @@ function moveEnemy(car) {
         }
         item.y += player.speed;
         item.style.top = item.y + "px";
+        if (player.score >= 1000) {
+            player.speed = 13;
+        }
+        
     })
 }
